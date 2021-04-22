@@ -1,0 +1,10 @@
+{% extends 'todo/base.html' %} {% block content %}
+<h1>Create Form</h1>
+{% if error%}
+<h2>{{error}}</h2>
+{% endif %}
+<form method="POST">
+  {% csrf_token %} {{nform.as_p}}
+  <input type="submit" value="Create" />
+</form>
+{%endblock%}
